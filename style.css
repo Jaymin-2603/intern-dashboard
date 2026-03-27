@@ -1,0 +1,212 @@
+/* Import clean, modern rounded font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+/* --- GLOBAL STYLES --- */
+html, body, [class*="css"] {
+    font-family: 'Nunito', sans-serif;
+    color: #1a3c40; /* Deep teal-grey for main text readability */
+}
+
+/* App Background: The requested light background color */
+[data-testid="stAppViewContainer"] {
+    background-color: #CADDE0 !important; 
+    /* Optional: Add a subtle mesh gradient for more depth */
+    background-image: radial-gradient(at 80% 0%, rgba(255,255,255,0.4) 0px, transparent 50%),
+                      radial-gradient(at 0% 100%, rgba(32,127,141,0.1) 0px, transparent 50%);
+}
+
+/* Hide Streamlit Header for a cleaner app feel */
+[data-testid="stHeader"] {
+    background-color: transparent;
+}
+
+/* --- HEADINGS --- */
+h1, h2, h3 {
+    color: #0f3f47 !important; /* Very dark teal */
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+}
+
+/* --- SIDEBAR STYLING --- */
+[data-testid="stSidebar"] {
+    /* Gradient from light blue/grey to teal */
+    background: linear-gradient(180deg, #cadde0 0%, #207f8d 100%) !important; 
+    border-right: none;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+}
+
+/* Sidebar Text & Labels - Adjusted for the light-to-dark gradient */
+[data-testid="stSidebar"] .css-17lntkn, 
+[data-testid="stSidebar"] p, 
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] span {
+    color: #0b2b30 !important; /* Dark teal for better readability */
+    font-weight: 700;
+}
+
+/* Sidebar Inputs (Selectbox, Date inputs) */
+[data-testid="stSidebar"] [data-baseweb="select"] > div,
+[data-testid="stSidebar"] input {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: #0b2b30 !important;
+    backdrop-filter: blur(5px);
+}
+
+/* Sidebar Input Text Overrides */
+[data-baseweb="select"] span {
+    color: #207F8D !important; /* Makes selected text dark teal for readability */
+}
+/* --- DATAFRAMES & TABLES (Gradient Background like Photo 4) --- */
+[data-testid="stDataFrame"], [data-testid="stTable"] {
+    /* Green to Purple gradient */
+    background: linear-gradient(135deg, #7dac2d 0%, #a05479 100%) !important;
+    border-radius: 20px; 
+    padding: 24px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+/* --- METRIC CARDS(Glassmorphism + Teal Gradient) --- */
+[data-testid="stMetric"]{
+    /* Glassmorphism: Semi-transparent white to very soft teal gradient */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.5) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    
+    border-radius: 20px; 
+    padding: 24px;
+    
+    /* Subtle border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    
+    /* Soft teal-tinted shadow */
+    box-shadow: 0px 8px 32px 0 rgba(32, 127, 141, 0.15); 
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-testid="stMetric"]:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0px 12px 40px 0 rgba(32, 127, 141, 0.25);
+}
+
+/* Metric Value */
+[data-testid="stMetricValue"] {
+    /* Bold gradient using your primary color */
+    background: linear-gradient(135deg, #207F8D 0%, #124a52 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 2.6rem;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #5a7d82;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Table Headers (Dark pill-shape style like Photo 4) */
+thead tr th {
+    background-color: rgba(30, 30, 45, 0.6) !important; /* Dark overlay */
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    border-bottom: none !important;
+    text-transform: capitalize;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Table Cells (White text, transparent background) */
+tbody tr td {
+    color: #ffffff !important; /* White text pops against the gradient */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important; /* Soft dividing lines */
+    background-color: transparent !important;
+    font-weight: 500;
+}
+
+/* --- DIVIDER --- */
+hr {
+    border-color: rgba(32, 127, 141, 0.15);
+    margin: 2.5rem 0;
+}
+/* Force Streamlit's inner table containers to be transparent so the gradient shows */
+[data-testid="stDataFrame"] > div {
+    background-color: transparent !important;
+}
+
+/* --- DATE PICKER CALENDAR POP-UP --- */
+
+/* Main calendar background and border */
+div[data-baseweb="calendar"] {
+    background-color: #cadde0 !important; /* Light teal-grey background */
+    border: 1px solid rgba(32, 127, 141, 0.3) !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+    padding: 10px !important;
+}
+
+/* Calendar Month/Year Header Text */
+div[data-baseweb="calendar"] [id*="month-header"] {
+    color: #0b2b30 !important;
+    font-weight: 800 !important;
+}
+
+/* Arrow buttons (Next/Prev Month) */
+div[data-baseweb="calendar"] button {
+    color: #207f8d !important;
+    background-color: transparent !important;
+}
+
+div[data-baseweb="calendar"] button:hover {
+    background-color: rgba(32, 127, 141, 0.2) !important;
+    border-radius: 50%;
+}
+
+/* Weekday labels (Su, Mo, Tu, etc.) */
+div[data-baseweb="calendar"] [role="columnheader"] {
+    color: #5a7d82 !important;
+    font-weight: 700 !important;
+}
+
+/* Individual Days */
+div[data-baseweb="calendar"] [role="gridcell"] {
+    color: #0b2b30 !important;
+    font-weight: 500 !important;
+    background-color: transparent !important;
+}
+
+/* Hover state for unselected days */
+div[data-baseweb="calendar"] [role="gridcell"]:hover {
+    background-color: rgba(32, 127, 141, 0.2) !important; /* Soft teal hover */
+    border-radius: 50% !important;
+}
+
+/* Selected Day (The Dark Teal Circle) */
+div[data-baseweb="calendar"] [role="gridcell"][aria-selected="true"] {
+    background-color: #207f8d !important; /* Solid dark teal */
+    color: #ffffff !important; /* White text */
+    border-radius: 50% !important; /* Perfect circle */
+    font-weight: 800 !important;
+}
+
+/* Days outside the current month (faded out) */
+div[data-baseweb="calendar"] [role="gridcell"][aria-disabled="true"] {
+    color: rgba(11, 43, 48, 0.3) !important;
+}
+
+/* --- CHAT MESSAGE STYLES --- */
+[data-testid="stChatMessageContent"],
+[data-testid="stChatMessageContent"] * {
+    color: #0f3f47 !important;
+    font-weight: 500;
+}
+[data-testid="stChatMessage"] {
+    background: rgba(255, 255, 255, 0.65) !important;
+    border-radius: 14px;
+    padding: 4px;
+    margin-bottom: 12px;
+}

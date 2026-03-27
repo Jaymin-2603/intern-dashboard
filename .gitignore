@@ -1,0 +1,35 @@
+# 🔐 Secrets (VERY IMPORTANT)
+.env
+.streamlit/secrets.toml
+.streamlit/secrets.toml
+synthetic_output/
+# 🐍 Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🗂️ Logs & temp files
+*.log
+*.tmp
+
+# 💻 OS files
+.DS_Store
+Thumbs.db
+
+# 🧰 IDE files
+.vscode/
+.idea/
+
+# 🔑 Any custom secret files (add if needed)
+config.py
+secrets.json
+
+
+.env
+.streamlit/secrets.toml
+synthetic_output/
+
+__pycache__/
+*.pyc
+venv/
